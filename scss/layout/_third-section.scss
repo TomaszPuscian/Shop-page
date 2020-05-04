@@ -1,0 +1,121 @@
+.third--section--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+}
+
+#third--section--list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.third--section--list--element {
+  display: flex;
+  flex-direction: column;
+  width: 372px;
+  height: 471px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 18px;
+  text-align: center;
+  position: relative;
+
+  & p {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+
+  &:hover {
+     transform: scale(1.1)
+  }
+}
+
+.third--section--container h2 {
+  margin: 30px;
+}
+
+.price {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 46px;
+}
+
+.package--list--element{
+  padding: 15px;
+  &:first-child {
+    margin-top: 45px ;
+  }
+}
+
+#basic {
+  &-price {
+    color: $red;
+  }
+  &-border {
+    border-color: $red;
+  }
+  &-border:hover {
+    box-shadow: 0 0 10px $red;
+  }
+  &-btn {
+    background: $red;
+    position: absolute;
+    bottom: -25px;
+    right: 105px;
+  }
+}
+
+#professional {
+  &-price {
+    color: $blue;
+  }
+  &-border {
+    border-color: $blue;
+  }
+  &-border:hover {
+  box-shadow: 0 0 10px $blue;
+  margin: 10px 20px 30px 20px;
+  }
+  &-btn {
+    background: $blue;
+    position: absolute;
+    bottom: -25px;
+    right: 105px;
+  }
+}
+
+#premium {
+  &-price {
+    color: $green;
+  }
+  &-border {
+    border-color: $green;
+  }
+  &-border:hover {
+    box-shadow: 0 0 10px $green;
+    margin: 10px 20px 30px 20px;
+  }
+  &-btn {
+    background: $green;
+    position: absolute;
+    bottom: -25px;
+    right: 105px;
+  }
+}
+
+.btn {
+  @include button;
+}
+
+.package--button {
+  font-family: "Open Sans",sans-serif;
+  width: 150px;
+  height: 50px;
+  font-size: 13px;
+}

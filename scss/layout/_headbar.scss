@@ -1,0 +1,43 @@
+.headbar--container {
+  height: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.headbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu--list {
+  display: flex;
+  text-transform: uppercase;
+}
+
+.menu--list--element {
+  font-size: 11px;
+  line-height: 15px;
+  padding: 20px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.menu--list a {
+  text-decoration: none;
+  color: grey;
+}
+
+.menu--list--element:hover {
+  border-bottom: 4px solid $blue;
+  cursor: pointer;
+}
+
+.menu--list a:hover {
+  color: black;
+}
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+  font-size: 32px;
+  color: #08A6E4;
+}
