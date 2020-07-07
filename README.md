@@ -1,5 +1,6 @@
 # BEST SHOP - LANDING PAGE
 _________________________
+### JavaScript Calculator is currently in progress
 
 Quite basic landing page based on mapping the layout with Adobe XD.
 
