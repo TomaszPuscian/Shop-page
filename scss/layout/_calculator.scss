@@ -1,0 +1,25 @@
+.calculator {
+  &--container {
+    @include flex-center;
+    flex-direction: column;
+  }
+  &--text--container {
+    @include flex-center;
+  }
+  &--form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--checkmark--container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &--checkmark--square {
+    @include flex-center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid black;
+  }
+}

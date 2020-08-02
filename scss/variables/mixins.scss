@@ -1,6 +1,13 @@
 @mixin button {
   background: $blue;
+  border: 1px solid transparent;
   border-radius: 40px;
   color: white;
   font-weight: bold;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

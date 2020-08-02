@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Best Shop</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -220,6 +219,70 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
+        </section>
+        <section>
+            <div class="container calculator--container">
+                <h1>
+                    Calculate how much you'll pay
+                </h1>
+                <div class="calculator--text--container">
+                    <div>
+                        <form class="calculator--form">
+                            <input type="number" name="quantity" id="quantity" placeholder="Products quantity" class="calculator--form--left"/>
+                            <input type="number" name="estimated-orders" id="estimated-orders" placeholder="Estimated orders in month"/>
+                            <select name="package" id="package">
+                                <option value="basic">Basic</option>
+                                <option value="premium">Professional</option>
+                                <option value="professional">Premium</option>
+                            </select>
+                        </form>
+                        <div class="calculator--checkmark--container">
+                            <span class="calculator--checkmark--square">
+                                <img src="assets/Checkmark.svg" class="calc-checkmark-img" alt="checkmark" />
+                            </span>
+                            <span>Accounting</span>
+                        </div>
+                        <div class="calculator--checkmark--container">
+                            <span class="calculator--checkmark--square">
+                                <img src="assets/Checkmark.svg" class="calc-checkmark-img" alt="checkmark" />
+                            </span>
+                            <span>Rental of payment terminal</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="calculator--results">
+                            <span>
+                                Products
+                            </span>
+                        </div>
+                        <div class="calculator--results">
+                            <span>
+                                Orders
+                            </span>
+                        </div>
+                        <div class="calculator--results">
+                            <span>
+                                Package
+                            </span>
+                        </div>
+                        <div class="calculator--results">
+                            <span>
+                                Accounting
+                            </span>
+                        </div>
+                        <div class="calculator--results">
+                            <span>
+                                Terminal
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                Total
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section>

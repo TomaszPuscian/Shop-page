@@ -1,3 +1,5 @@
+@import "config/reset";
+
 @import "variables/colors";
 @import "config/tagProperties";
 @import "variables/mixins";
@@ -8,6 +10,7 @@
 @import "layout/first-section";
 @import "layout/second-section";
 @import "layout/third-section";
+@import "layout/calculator";
 @import "layout/form";
 
 @import "layout/footer";
