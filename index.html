@@ -76,7 +76,7 @@
                 </ul>
             </div>
         </section>
-        <section id="second-section">
+        <section class="section-with-bg">
             <div class="container second--section--container">
                 <ul>
                     <li class="second--section--list--element">
@@ -221,7 +221,7 @@
                 </ul>
             </div>
         </section>
-        <section>
+        <section class="section-with-bg">
             <div class="container calculator--container">
                 <h1>
                     Calculate how much you'll pay
@@ -229,9 +229,9 @@
                 <div class="calculator--text--container">
                     <div>
                         <form class="calculator--form">
-                            <input type="number" name="quantity" id="quantity" placeholder="Products quantity" class="calculator--form--left"/>
-                            <input type="number" name="estimated-orders" id="estimated-orders" placeholder="Estimated orders in month"/>
-                            <select name="package" id="package">
+                            <input type="number" name="quantity" id="quantity" placeholder="Products quantity" class="calculator--form--left--input"/>
+                            <input type="number" name="estimated-orders" id="estimated-orders" placeholder="Estimated orders in month" class="calculator--form--left--input"/>
+                            <select name="package" id="package" class="calculator--form--left--input">
                                 <option id="calculator-option-basic" value="Basic">Basic</option>
                                 <option id="calculator-option-professional" value="Professional">Professional</option>
                                 <option id="calculator-option-premium" value="Premium">Premium</option>
@@ -246,7 +246,7 @@
                             </label>
                         </form>
                     </div>
-                    <div>
+                    <div class="calculator--results--container">
                         <div class="calculator--results">
                             <span>
                                 Products
@@ -290,6 +290,9 @@
                         </div>
 
                         <div>
+                            <span>
+                                Total:
+                            </span>
                             <span id="total-price">
 
                             </span>

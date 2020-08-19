@@ -31,15 +31,15 @@ const accountingCost = 35;
 const terminalCost = 10;
 
 
-let sumProducts;
-let sumOrders;
-let sumPackage;
-let sumAccounting;
-let sumRental;
+let sumProducts = 0;
+let sumOrders = 0;
+let sumPackage = 0;
+let sumAccounting = 0;
+let sumTerminal = 0;
 
 const sumTotalPrice = () => {
-    let result = parseFloat(sumProducts) + parseFloat(sumOrders) + parseFloat(sumPackage) + parseFloat(sumAccounting) + parseFloat(sumRental);
-    totalPrice.innerText = 'Total: ' + result + '$' ;
+    let result = sumProducts + sumOrders + sumPackage + sumAccounting + sumTerminal;
+    totalPrice.innerText = result + '$' ;
 }
 
 // Połącz tę funkcję w jedną - "countings" albo coś
@@ -47,7 +47,7 @@ const countPriceOfProducts = () => {
     productsInput.addEventListener("keyup", () => {
         if (Number.isInteger(parseFloat(productsInput.value)) && parseFloat(productsInput.value) > 0) {
             productsValueCalculations.innerText = `${productsInput.value} * ${productValue}$`
-            productsPrice.innerText = productsInput.value * productValue
+            productsPrice.innerText = productsInput.value * productValue + "$"
             sumProducts = 0
             sumProducts = productsInput.value * productValue
             sumTotalPrice();
@@ -62,7 +62,7 @@ const countPriceOfOrders = () => {
     ordersInput.addEventListener("keyup", () => {
         if (Number.isInteger(parseFloat(productsInput.value)) && parseFloat(productsInput.value) > 0) {
             ordersValueCalculations.innerText = `${ordersInput.value} * ${orderValue}$`
-            ordersPrice.innerText = ordersInput.value * orderValue
+            ordersPrice.innerText = ordersInput.value * orderValue + "$"
             sumOrders = 0;
             sumOrders = ordersInput.value * orderValue
             sumTotalPrice();
@@ -76,19 +76,17 @@ const countPriceOfOrders = () => {
 const addPackagePrice = () => {
     packageInput.addEventListener("change", () => {
         packageType.innerText = packageInput.value;
+        sumPackage = 0
         if (packageInput.value === basicPackage) {
-            packagePrice.innerText = basicPackagePrice;
-            sumPackage = 0
+            packagePrice.innerText = basicPackagePrice + "$";
             sumPackage = basicPackagePrice;
             sumTotalPrice();
         } else if (packageInput.value === professionalPackage) {
-            packagePrice.innerText = professionalPackagePrice;
-            sumPackage = 0
+            packagePrice.innerText = professionalPackagePrice + "$";
             sumPackage = professionalPackagePrice;
             sumTotalPrice();
         } else {
-            packagePrice.innerText = premiumPackagePrice;
-            sumPackage = 0
+            packagePrice.innerText = premiumPackagePrice + "$";
             sumPackage = premiumPackagePrice;
             sumTotalPrice();
         }
@@ -97,20 +95,28 @@ const addPackagePrice = () => {
 
 const addAccountingPrice = () => {
     accountingCheckbox.addEventListener("change", ()=> {
+        sumAccounting = 0;
         if (!accountingCheckbox.checked) {
             accountingPrice.innerText = "";
+            sumTotalPrice();
         } else {
-            accountingPrice.innerText = accountingCost;
+            accountingPrice.innerText = accountingCost + "$";
+            sumAccounting = accountingCost;
+            sumTotalPrice()
         }
     })
 }
 
 const addTerminalPrice = () => {
     terminalCheckbox.addEventListener("change", () => {
+        sumTerminal = 0;
         if (!terminalCheckbox.checked) {
             terminalPrice.innerText = "";
+            sumTotalPrice();
         } else {
-            terminalPrice.innerText = terminalCost;
+            terminalPrice.innerText = terminalCost + "$";
+            sumTerminal = terminalCost;
+            sumTotalPrice();
         }
     })
 }
