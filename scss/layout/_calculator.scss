@@ -2,9 +2,13 @@
   &--container {
     @include flex-center;
     flex-direction: column;
+    padding: 20px 40px 40px 40px;
   }
   &--text--container {
     @include flex-center;
+  }
+  &--form--container {
+    min-height: 250px;
   }
   &--form {
     min-width: 400px;
@@ -15,6 +19,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 2em;
+    min-height: 250px;
   }
   &--results {
     display: flex;
@@ -36,10 +41,20 @@
     }
   }
   &--form--left--input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 2.5em;
     margin-bottom: 1em;
-    padding: 0 0.5em 0.5em 0;
     border: 2px solid $blue;
     border-radius: 5px;
+    color: $contact-form-paragraph;
+    &::placeholder {
+      color: $contact-form-paragraph;
+    }
+  }
+  &--checkmark--container {
+    margin: 0.75em 0;
   }
 }
 

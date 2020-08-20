@@ -4,6 +4,7 @@ const ordersInput = document.querySelector("#estimated-orders");
 const packageInput = document.querySelector("#package");
 const accountingCheckbox = document.querySelector("#calculator-accounting-checkbox");
 const terminalCheckbox = document.querySelector("#calculator-terminal-checkbox");
+const calculatorResultsVisibility = document.querySelectorAll(".calculator--results");
 
 const productsValueCalculations = document.querySelector("#products-value-calculations");
 const productsPrice = document.querySelector("#products-price");
@@ -41,11 +42,12 @@ const sumTotalPrice = () => {
     let result = sumProducts + sumOrders + sumPackage + sumAccounting + sumTerminal;
     totalPrice.innerText = result + '$' ;
 }
-
+console.log(calculatorResultsVisibility[0]);
 // Połącz tę funkcję w jedną - "countings" albo coś
 const countPriceOfProducts = () => {
     productsInput.addEventListener("keyup", () => {
         if (Number.isInteger(parseFloat(productsInput.value)) && parseFloat(productsInput.value) > 0) {
+            calculatorResultsVisibility[0].classList.toggle("hidden")
             productsValueCalculations.innerText = `${productsInput.value} * ${productValue}$`
             productsPrice.innerText = productsInput.value * productValue + "$"
             sumProducts = 0
@@ -61,6 +63,7 @@ const countPriceOfProducts = () => {
 const countPriceOfOrders = () => {
     ordersInput.addEventListener("keyup", () => {
         if (Number.isInteger(parseFloat(productsInput.value)) && parseFloat(productsInput.value) > 0) {
+            calculatorResultsVisibility[1].classList.toggle("hidden")
             ordersValueCalculations.innerText = `${ordersInput.value} * ${orderValue}$`
             ordersPrice.innerText = ordersInput.value * orderValue + "$"
             sumOrders = 0;
