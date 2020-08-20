@@ -4,7 +4,6 @@ const ordersInput = document.querySelector("#estimated-orders");
 const packageInput = document.querySelector("#package");
 const accountingCheckbox = document.querySelector("#calculator-accounting-checkbox");
 const terminalCheckbox = document.querySelector("#calculator-terminal-checkbox");
-const calculatorResultsVisibility = document.querySelectorAll(".calculator--results");
 
 const productsValueCalculations = document.querySelector("#products-value-calculations");
 const productsPrice = document.querySelector("#products-price");
@@ -38,16 +37,20 @@ let sumPackage = 0;
 let sumAccounting = 0;
 let sumTerminal = 0;
 
+
+
+
 const sumTotalPrice = () => {
+    totalPrice.parentElement.style.visibility = "visible";
     let result = sumProducts + sumOrders + sumPackage + sumAccounting + sumTerminal;
     totalPrice.innerText = result + '$' ;
 }
-console.log(calculatorResultsVisibility[0]);
+
 // Połącz tę funkcję w jedną - "countings" albo coś
 const countPriceOfProducts = () => {
-    productsInput.addEventListener("keyup", () => {
+    productsInput.addEventListener("input", () => {
         if (Number.isInteger(parseFloat(productsInput.value)) && parseFloat(productsInput.value) > 0) {
-            calculatorResultsVisibility[0].classList.toggle("hidden")
+            productsValueCalculations.parentElement.style.visibility = "visible";
             productsValueCalculations.innerText = `${productsInput.value} * ${productValue}$`
             productsPrice.innerText = productsInput.value * productValue + "$"
             sumProducts = 0
@@ -60,16 +63,24 @@ const countPriceOfProducts = () => {
     })
 }
 
+
 const countPriceOfOrders = () => {
     ordersInput.addEventListener("keyup", () => {
-        if (Number.isInteger(parseFloat(productsInput.value)) && parseFloat(productsInput.value) > 0) {
-            calculatorResultsVisibility[1].classList.toggle("hidden")
+            if (Number.isInteger(parseFloat(ordersInput.value)) && parseFloat(ordersInput.value) > 0) {
+            ordersValueCalculations.parentElement.style.visibility = "visible";
             ordersValueCalculations.innerText = `${ordersInput.value} * ${orderValue}$`
             ordersPrice.innerText = ordersInput.value * orderValue + "$"
             sumOrders = 0;
             sumOrders = ordersInput.value * orderValue
             sumTotalPrice();
+        } else if (ordersInput === "") {
+            console.log("jest tak");
+            sumOrders = 0;
+            sumTotalPrice;
+            ordersValueCalculations.parentElement.style.visibility = "hidden";
+            ordersPrice = "";
         } else {
+            console.log("jest nie");
             ordersValueCalculations.innerText = "";
             ordersPrice.innerText = ""
         }
@@ -80,6 +91,7 @@ const addPackagePrice = () => {
     packageInput.addEventListener("change", () => {
         packageType.innerText = packageInput.value;
         sumPackage = 0
+        packagePrice.parentElement.style.visibility = "visible";
         if (packageInput.value === basicPackage) {
             packagePrice.innerText = basicPackagePrice + "$";
             sumPackage = basicPackagePrice;
@@ -100,9 +112,11 @@ const addAccountingPrice = () => {
     accountingCheckbox.addEventListener("change", ()=> {
         sumAccounting = 0;
         if (!accountingCheckbox.checked) {
+            accountingPrice.parentElement.style.visibility = "hidden"
             accountingPrice.innerText = "";
             sumTotalPrice();
         } else {
+            accountingPrice.parentElement.style.visibility = "visible";
             accountingPrice.innerText = accountingCost + "$";
             sumAccounting = accountingCost;
             sumTotalPrice()
@@ -114,9 +128,11 @@ const addTerminalPrice = () => {
     terminalCheckbox.addEventListener("change", () => {
         sumTerminal = 0;
         if (!terminalCheckbox.checked) {
+            terminalPrice.parentElement.style.visibility = "hidden"
             terminalPrice.innerText = "";
             sumTotalPrice();
         } else {
+            terminalPrice.parentElement.style.visibility = "visible"
             terminalPrice.innerText = terminalCost + "$";
             sumTerminal = terminalCost;
             sumTotalPrice();
