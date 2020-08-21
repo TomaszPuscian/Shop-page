@@ -76,7 +76,7 @@
                 </ul>
             </div>
         </section>
-        <section id="second-section">
+        <section class="section-with-bg">
             <div class="container second--section--container">
                 <ul>
                     <li class="second--section--list--element">
@@ -221,64 +221,80 @@
                 </ul>
             </div>
         </section>
-        <section>
+        <section class="section-with-bg">
             <div class="container calculator--container">
                 <h1>
                     Calculate how much you'll pay
                 </h1>
                 <div class="calculator--text--container">
-                    <div>
+                    <div class="calculator--form--container">
                         <form class="calculator--form">
-                            <input type="number" name="quantity" id="quantity" placeholder="Products quantity" class="calculator--form--left"/>
-                            <input type="number" name="estimated-orders" id="estimated-orders" placeholder="Estimated orders in month"/>
-                            <select name="package" id="package">
-                                <option value="basic">Basic</option>
-                                <option value="premium">Professional</option>
-                                <option value="professional">Premium</option>
+                            <input type="number" name="quantity" id="quantity" placeholder="Products quantity" class="calculator--form--left--input"/>
+                            <input type="number" name="estimated-orders" id="estimated-orders" placeholder="Estimated orders in month" class="calculator--form--left--input"/>
+                            <select name="package" id="package" class="calculator--form--left--input">
+                                <option id="calculator-option-basic" value="Basic">Basic</option>
+                                <option id="calculator-option-professional" value="Professional">Professional</option>
+                                <option id="calculator-option-premium" value="Premium">Premium</option>
                             </select>
+                            <label for="calculator-accounting-checkbox" class="calculator--checkmark--container">
+                                <input type="checkbox" id="calculator-accounting-checkbox" class="calculator--checkbox--input" />
+                                Accounting
+                            </label>
+                            <label for="calculator-terminal-checkbox" class="calculator--checkmark--container">
+                                <input type="checkbox" id="calculator-terminal-checkbox" class="calculator--checkbox--input" />
+                                Rental of payment terminal
+                            </label>
                         </form>
-                        <div class="calculator--checkmark--container">
-                            <span class="calculator--checkmark--square">
-                                <img src="assets/Checkmark.svg" class="calc-checkmark-img" alt="checkmark" />
-                            </span>
-                            <span>Accounting</span>
-                        </div>
-                        <div class="calculator--checkmark--container">
-                            <span class="calculator--checkmark--square">
-                                <img src="assets/Checkmark.svg" class="calc-checkmark-img" alt="checkmark" />
-                            </span>
-                            <span>Rental of payment terminal</span>
-                        </div>
                     </div>
-                    <div>
+                    <div class="calculator--results--container">
                         <div class="calculator--results">
                             <span>
                                 Products
                             </span>
+                            <span id="products-value-calculations"></span>
+                            <span id="products-price" class="calculator--price--field"></span>
                         </div>
+
                         <div class="calculator--results">
                             <span>
                                 Orders
                             </span>
+                            <span id="orders-value-calculations"></span>
+                            <span id="orders-price" class="calculator--price--field"></span>
                         </div>
+
                         <div class="calculator--results">
                             <span>
                                 Package
                             </span>
+                            <span id="package-type"></span>
+                            <span id="package-price" class="calculator--price--field"></span>
                         </div>
+
                         <div class="calculator--results">
                             <span>
                                 Accounting
                             </span>
+                            <span id="accounting-price" class="calculator--price--field">
+
+                            </span>
                         </div>
-                        <div class="calculator--results">
+
+                        <div class="calculator--results" id="terminal">
                             <span>
                                 Terminal
                             </span>
+                            <span id="terminal-price" class="calculator--price--field">
+
+                            </span>
                         </div>
-                        <div>
+
+                        <div class="calculator--total--price--container">
                             <span>
-                                Total
+                                Total:
+                            </span>
+                            <span id="total-price">
+
                             </span>
                         </div>
                     </div>
@@ -346,6 +362,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/calculator.js"></script>
 </body>
 </html>
 

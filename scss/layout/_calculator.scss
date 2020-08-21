@@ -2,24 +2,90 @@
   &--container {
     @include flex-center;
     flex-direction: column;
+    padding: 20px 40px 40px 40px;
   }
   &--text--container {
     @include flex-center;
   }
+  &--form--container {
+    min-height: 250px;
+  }
   &--form {
+    min-width: 400px;
     display: flex;
     flex-direction: column;
   }
-
-  &--checkmark--container {
+  &--results--container {
     display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+    min-height: 250px;
+  }
+  &--results {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    min-width: 400px;
+    height: 20px;
+    background: $green;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 7px 15px -2px rgba(0,0,0,0.42);
+    -moz-box-shadow: 0 7px 15px -2px rgba(0,0,0,0.42);
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.25);
+    span {
+      min-width: 100px;
+    }
+  }
+  &--form--left--input {
+    display: flex;
     justify-content: flex-start;
+    align-items: center;
+    height: 2.5em;
+    margin-bottom: 1em;
+    padding-left: 0.5em;
+    border: 2px solid $blue;
+    border-radius: 5px;
+    color: $contact-form-paragraph;
+    box-shadow: 0 2px 3px -1px rgba(8, 166, 228, 0.25);
+    &::placeholder {
+      color: $contact-form-paragraph;
+    }
   }
-  &--checkmark--square {
-    @include flex-center;
-    width: 24px;
-    height: 24px;
-    border: 1px solid black;
+  &--checkmark--container {
+    margin: 0.75em 0;
   }
+  &--price--field {
+    font-weight: bold;
+    text-align: center;
+  }
+  &--total--price--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    visibility: hidden;
+    width: 50%;
+    height: 2em;
+    padding: 0.5em;
+    background: $blue;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+  }
+}
+
+#products-value-calculations, 
+#orders-value-calculations,
+#package-type {
+  text-align: center;
+}
+
+#total-price {
+  font-weight: bold;
 }
