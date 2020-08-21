@@ -73,12 +73,6 @@ const countPriceOfOrders = () => {
             sumOrders = 0;
             sumOrders = ordersInput.value * orderValue
             sumTotalPrice();
-        } else if (ordersInput === "") {
-            console.log("jest tak");
-            sumOrders = 0;
-            sumTotalPrice;
-            ordersValueCalculations.parentElement.style.visibility = "hidden";
-            ordersPrice = "";
         } else {
             console.log("jest nie");
             ordersValueCalculations.innerText = "";
