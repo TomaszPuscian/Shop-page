@@ -1,5 +1,8 @@
 # BEST SHOP - LANDING PAGE
 _________________________
+OPEN PAGE: https://tomaszpuscian.github.io/Shop-page/
+
+_________________________
 
 Quite basic landing page based on mapping the layout with Adobe XD.
 
